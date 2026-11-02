@@ -86,12 +86,31 @@ a:focus {
   color: #a04424;
 }
 
-img,
-iframe {
-  display: block;
-  margin: 1.25rem auto;
-  border: 3px solid #d5e2df;
-  border-radius: 6px;
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.learning-card {
+  padding: 1.25rem;
+  border: 1px solid #b7ccca;
+  border-radius: 8px;
+  background-color: #f8fbfa;
+}
+
+.learning-card h2 {
+  margin-top: 0;
+}
+
+.learning-card--wide {
+  grid-column: 1 / -1;
+}
+
+.learning-card img,
+.learning-card iframe {
+  margin: 1rem auto 0;
 }
 
 img {
@@ -100,7 +119,13 @@ img {
 }
 
 iframe {
+  display: block;
+  width: 100%;
   max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 3px solid #d5e2df;
+  border-radius: 6px;
 }
 
 main > :last-child {
@@ -130,5 +155,13 @@ main > :last-child {
 
   nav a {
     text-align: center;
+  }
+
+  .learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-card--wide {
+    grid-column: auto;
   }
 }
